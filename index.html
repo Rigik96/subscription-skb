@@ -61,10 +61,13 @@
 
     <!-- Header -->
     <header id="header" class="w-full fixed top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-12 flex items-center justify-between">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-14 flex items-center justify-between gap-4">
             <div class="flex items-center gap-2">
                 <div class="font-bold text-2xl tracking-tighter">Skillbox</div>
             </div>
+            <button class="bg-skill-blue text-white px-4 py-2 rounded-full text-sm lg:text-[15px] font-semibold whitespace-nowrap shadow-[0_8px_24px_rgba(61,59,255,0.3)] popup-btn">
+                Попробовать за 1&nbsp;₽
+            </button>
         </div>
     </header>
 
@@ -933,10 +936,10 @@
             
             <div class="relative">
                 <!-- Carousel Container -->
-                <div class="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+                <div class="flex items-stretch overflow-x-auto gap-6 pb-12 snap-x snap-mandatory hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
                     
                     <!-- Card 1 -->
-                    <div class="min-w-[320px] w-[320px] h-[260px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
+                    <div class="min-w-[320px] w-[320px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-4">
                                 <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Ирина" class="w-14 h-14 rounded-full object-cover">
@@ -950,7 +953,7 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="min-w-[320px] w-[320px] h-[260px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
+                    <div class="min-w-[320px] w-[320px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-4">
                                 <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-6.jpg" alt="Марина" class="w-14 h-14 rounded-full object-cover">
@@ -964,7 +967,7 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="min-w-[320px] w-[320px] h-[260px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
+                    <div class="min-w-[320px] w-[320px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-4">
                                 <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Дмитрий" class="w-14 h-14 rounded-full object-cover">
@@ -978,7 +981,7 @@
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="min-w-[320px] w-[320px] h-[260px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
+                    <div class="min-w-[320px] w-[320px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-4">
                                 <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg" alt="Ольга" class="w-14 h-14 rounded-full object-cover">
@@ -992,7 +995,7 @@
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="min-w-[320px] w-[320px] h-[260px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
+                    <div class="min-w-[320px] w-[320px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-4">
                                 <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="Наталья" class="w-14 h-14 rounded-full object-cover">
@@ -1006,7 +1009,7 @@
                     </div>
 
                     <!-- Card 6 -->
-                    <div class="min-w-[320px] w-[320px] h-[260px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
+                    <div class="min-w-[320px] w-[320px] bg-white p-8 rounded-3xl shadow-sm snap-center shrink-0 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center gap-4 mb-4">
                                 <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Андрей" class="w-14 h-14 rounded-full object-cover">
@@ -1186,10 +1189,11 @@
         <p>© 2024 Skillbox. Все права защищены. Дизайн концепт.</p>
     </footer>
 
-    <div id="popup-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4 py-6" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+    <div id="popup-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+        <div id="popup-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm"></div>
 
-        <div class="modal-content relative z-10 mx-4 w-full max-w-[560px] rounded-[32px] border border-gray-100 bg-white p-8 shadow-2xl sm:p-12">
+        <div id="popup-shell" class="relative flex min-h-screen items-start justify-center px-4 py-6 sm:items-center">
+            <div class="modal-content relative z-10 w-full max-w-[560px] rounded-[32px] border border-gray-100 bg-white p-8 shadow-2xl sm:p-12">
             <button type="button" id="popup-close" class="absolute right-6 top-6 flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-black/40 transition-all hover:bg-gray-100 hover:text-black" aria-label="Закрыть окно">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
@@ -1247,13 +1251,15 @@
 
                 <p class="text-sm text-gray-400 mt-4 mb-16">Пробный доступ на 7 дней, далее – 390&nbsp;₽/месяц. Отменить можно в любой момент по одному клику.</p>
             </form>
+            </div>
         </div>
     </div>
 
-    <div id="success-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center px-4 py-6" role="dialog" aria-modal="true" aria-labelledby="success-title">
-        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+    <div id="success-modal" class="fixed inset-0 z-[110] hidden overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="success-title">
+        <div id="success-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm"></div>
 
-        <div class="modal-content relative z-10 mx-4 w-full max-w-[520px] rounded-[32px] border border-gray-100 bg-white p-8 text-center shadow-2xl sm:p-12">
+        <div id="success-shell" class="relative flex min-h-screen items-start justify-center px-4 py-6 sm:items-center">
+            <div class="modal-content relative z-10 w-full max-w-[520px] rounded-[32px] border border-gray-100 bg-white p-8 text-center shadow-2xl sm:p-12">
             <div class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-[24px] bg-skill-black text-3xl text-white shadow-md">
                 <i class="fa-solid fa-check"></i>
             </div>
@@ -1268,6 +1274,7 @@
             <div class="text-sm font-medium text-black/50">
                 Следите за обновлениями в нашем канале
             </div>
+            </div>
         </div>
     </div>
 
@@ -1279,8 +1286,12 @@
         const popupModal = document.getElementById('popup-modal');
         const popupForm = document.getElementById('popup-form');
         const popupClose = document.getElementById('popup-close');
+        const popupOverlay = document.getElementById('popup-overlay');
+        const popupShell = document.getElementById('popup-shell');
         const popupNameInput = document.getElementById('nameInput');
         const successModal = document.getElementById('success-modal');
+        const successOverlay = document.getElementById('success-overlay');
+        const successShell = document.getElementById('success-shell');
         const successTelegram = document.getElementById('success-telegram');
 
         function openPopup() {
@@ -1314,6 +1325,12 @@
         });
 
         popupClose.addEventListener('click', closePopup);
+        popupOverlay.addEventListener('click', closePopup);
+        popupShell.addEventListener('click', function(event) {
+            if (event.target === popupShell) {
+                closePopup();
+            }
+        });
 
         popupForm.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -1335,14 +1352,9 @@
             window.open('https://t.me/', '_blank');
         });
 
-        popupModal.addEventListener('click', function(event) {
-            if (event.target === popupModal) {
-                closePopup();
-            }
-        });
-
-        successModal.addEventListener('click', function(event) {
-            if (event.target === successModal) {
+        successOverlay.addEventListener('click', closeSuccessModal);
+        successShell.addEventListener('click', function(event) {
+            if (event.target === successShell) {
                 closeSuccessModal();
             }
         });
